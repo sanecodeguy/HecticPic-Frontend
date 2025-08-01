@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HecticPic - Dashboard</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-firestore-compat.js"></script>
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <h1>HecticPic</h1>
+      <button id="logout-btn" class="btn btn-outline">Logout</button>
+    </header>
+    
+    <div class="stats">
+      <div class="stat-card">
+        <h3>Images Stored</h3>
+        <p id="image-count">0</p>
+      </div>
+    </div>
+    
+    <div class="upload-container">
+      <input type="file" id="image-upload" accept="image/*" hidden>
+      <label for="image-upload" class="btn">Choose Image</label>
+      <button id="upload-btn" class="btn" disabled>Upload to Discord</button>
+      
+      <div id="preview-container">
+        <img id="image-preview">
+      </div>
+      
+      <div class="progress-bar">
+        <div class="progress"></div>
+      </div>
+    </div>
+    
+    <div id="image-grid" class="image-grid">
+      <p class="loading">Loading your images...</p>
+    </div>
+    
+    <div id="toast" class="toast"></div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
